@@ -1,0 +1,115 @@
+
+<!-- JS and the DOM -->
+
+<!-- 
+	READ THIS FIRST!
+This file is an HTML file. You'll put your JS code for the exercises in a <scipt> tag at the bottom of this file.
+Open this file in Google Chrome by opening Chrome, typing command-O, and selecting this file.
+Or in Chrome you can use the menu bar by doing File -> Open.
+As you add JS code to the file, you can refresh the page and see your code take effect.
+You can also type your JS code in the Console tab of Chrome Developer Tools to see it take effect.
+Note: Usually you would put your HTML and JS in separate files, but for simplicity we're 
+putting them in the same file for this exercise.
+Read through the HTML code given, then scroll down to the exercises below.
+Type your JavaScript code for each exercise below each exercise description.
+For this exercise, don't change the HTML code given.
+-->
+
+<html>
+  <body>
+    Animals:
+    <ol id="ol1">
+      <li>Frog</li>
+      <li>Dog</li>
+      <li>Bunny</li>
+    </ol>
+
+    <div id="id1">
+      <p>This is the text in div id1</p>
+      <p>Hope you enjoy my HTML</p>
+    </div>
+
+    <p id="id2">Here's some text in a paragraph</p>
+
+    <div class="myClass">
+      I love learning about HTML and JavaScript
+    </div>
+
+    <p class="myClass">
+      Coding is fun
+    </p>
+
+    <button id="button1">Button 1</button>
+    <br /><br />
+    <button id="button2">Button 2</button>
+  </body>
+
+  <script type="text/javascript">
+    // Exercise 1: Select the element with id "id2" and change the text inside it to "Here's some new text"
+         function text() { 
+           document.getElementById("id2").innerHTML = "Here's some new text"
+         }
+    // Exercise 2: Select the element with id "id1" and make the text inside it green.
+          function changeColor (){
+            const greenText = document.querySelector("id1");
+             greenText.style.color = "green";
+         }
+    // Exercise 3: Select the elements that have the class "myClass". console.log the output.
+             const myClasses = document.getElementsByClassName("myClass")
+              console.log(myClasses) 
+    // Exercise 4: Select the children of the element with id "id1". console.log the output.
+          function parentChild(){
+            let selectchild = document.getElementById("id1");
+            let firstChild = selectchild.firstChild;
+            let lastChild = selectchild.lastChild;
+            console.log(firstChild);
+            console.log(lastChild);
+        }
+    // Exercise 5: Select all list items on the page. console.log the output.
+           let list = document.getElementById("ol1").getElementsByTagName("li");
+           console.log(list);
+    // Exercise 6: Use JavaScript to find the *number* of list items on the page. console.log the output.
+       let items = document.getElementById("ol1");
+       for( let i = 0; i < items.length; i= i+1) {
+         console.log(items[i])
+       }
+    // Exercise 7: Using JavaScript, create a list item and add it to the end of the ordered list.
+          let newElem = document.createElement("li");
+          let newText = document.createTextNode("cat");
+          newElem.appendChild(newText);
+          let position = document.getElementsByTagName("ol")[3];
+          position.appendchild(newElem);
+    // Exercise 8: Using JavaScript, make it so that when button1 is clicked,
+    // an alert pops up saying "Hi from Techtonica".
+       let firstButton = document.getElementById("button1")
+       firstButton.onclick = alert("Hi from Techtonica");
+
+    // Exercise 9: In your own words, write a few sentences explaining what the DOM is. Write your answer in a comment below:
+    // The DOM is a model of the web page. It contains nodes of document, element,attribute and text. You can access and update
+     //nodes using Javascript.which will update the web page with changes.
+    // 
+
+    // The next two exercises combine the DOM with other JavaScript you've learned. Try them for an extra challenge!
+
+    // Exercise 10: Select the elements with the class "myClass" and update the text inside each of them to end with "!"
+    // Hint: To operate on multiple elements, you can use a loop.
+          function updateElement(){
+            let myClasses = document.getElementsByClassName("myClass");
+            for(let i =0; i < myClasses.length; i++) {
+                myClasses.push("!");
+            }
+          }
+    // Exercise 11: Make it so when the button2 is clicked,
+    // the children of the element with id "id1" each have their text replaced with a random number 1-100
+        let firstButton = document.getElementById("button2");
+        let firstEle = firstButton.firstChild;
+        let lastEle =  firstButton.lastChild;
+        firstEle.innerHTML = Math.floor(Math.random()* 100);
+        lastEle.innerHTML = Math.floor(Math.random()* 100);
+    // How was this exercise (easy, hard, fun, confusing)?
+    // What references did you use to help?
+    // Please put your answers in a comment below:
+    // This exercise was a hard but it was informative to research the Dom and how Javascript work together Im excited to learn more and impove these skills.
+    // I used JavaScript and JQuery book W3 schools for references.
+  </script>
+</html>
