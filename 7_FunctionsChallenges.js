@@ -90,13 +90,19 @@ function indexOf(arr, number) {
 // includes('abcd', 'e') // --> false
 // includes('abcd', 'a', 2) // --> false
 
+
 function includes(collection, value, index) {
-    for(let item of collection)
-    if(collection.indexOf(value)=== 0) {
-        return true;
+    let hasValue = false;
+    if(typeof collection === "string" || Array.isArray(collection)) {
+        return collection.indexOf(value, index) > -1
     }
-      return false;
+    else if(typeof collection === "object") {
+        for(let item in collection) {
+          if(collection[item] === value)hasValue = true;
+        }
+    }
+    
+   
+      return hasValue;
 }
-      for(let value of collection) {
-        if(collection.indexOf(index) ===)
-      }
+
