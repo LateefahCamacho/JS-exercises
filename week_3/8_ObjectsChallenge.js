@@ -117,4 +117,3 @@ function minMaxKeyInObject(val) {
     // return lowestKey and highestKey as array
     return [lowestKey, highestKey];
 }
-console.log(minMaxKeyInObject({ 2: 'a', 7: 'b', 1: 'c', 10: 'd', 4: 'e' }));
